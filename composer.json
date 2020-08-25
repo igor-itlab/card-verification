@@ -2,7 +2,7 @@
   "name": "itlab-studio/card-verification",
   "type": "library",
   "description": "Library for credit card verification",
-  "version": "1.0.2-fix",
+  "version": "1.0.3",
   "keywords": ["credit card", "card"],
   "homepage": "https://itlab-studio.com/",
   "license": "MIT",
