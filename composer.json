@@ -2,7 +2,7 @@
   "name": "itlab-studio/card-verification",
   "type": "library",
   "description": "Library for credit card verification",
-  "version": "2.4.0",
+  "version": "1.0.1",
   "keywords": ["credit card", "card"],
   "homepage": "https://itlab-studio.com/",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "symfony/filesystem": "^5.2@dev",
     "symfony/validator": "^5.2@dev",
     "symfony/http-foundation": "^5.2@dev",
-    "symfony/orm-pack": "dev-master@dev"
+    "ext-intl": "*"
   },
   "autoload": {
     "psr-4": { "Calculation\\": "" }

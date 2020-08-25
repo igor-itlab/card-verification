@@ -1,7 +1,5 @@
 <?php
 
-
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,15 +15,13 @@ class CardVerification
         $this->creditCard = $creditCard;
     }
 
-    public function verificateCard(CreditCardInterface $creditCard, $currentUser, $directoryForImage, EntityManagerInterface $entityManager)
+    public function verificateCard(CreditCardInterface $creditCard, $data, $currentUser, $directoryForImage )
     {
         $creditCard->setClient($currentUser);
 
         $fileUploader = new FileUploader($directoryForImage);
-        $this->setPhotos($creditCard, $fileUploader);
+        $creditCard->setPhotos((array)$this->handleFiles($data['photos'], $fileUploader));
 
-        $entityManager->persist($creditCard);
-        $entityManager->flush();
 //        $count = $entityManager->getRepository(__CLASS__)->count(['seen' => false]);
 //        try {
 //            $update = new Update(
@@ -41,16 +37,17 @@ class CardVerification
 //        } catch (Exception $exception) {
 //            return $creditCard;
 //        }
+
         return new JsonResponse(null, Response::HTTP_OK);
 
     }
 
-    private function setPhotos(CreditCardInterface $creditCard, FileUploaderInterface $fileUploader) {
-        if (!empty($creditCard->getPhoto())) {
-
+    private function handleFiles($files, FileUploaderInterface $fileUploader) {
+        if($files) {
             $fileName = array();
             $filesSize = null;
-            foreach ($creditCard->getPhoto() as $key => $file) {
+
+            foreach ($files as $key => $file) {
                 $fileName[] = [
                     "name" => $fileUploader->upload($file)
                 ];
@@ -64,8 +61,7 @@ class CardVerification
                 return new Exception;
             }
 
-            $creditCard->setPhotos($fileName);
+            return $fileName;
         }
     }
-
 }

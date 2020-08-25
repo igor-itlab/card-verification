@@ -169,7 +169,7 @@ class CreditCard implements CreditCardInterface
      */
     public function setPhotos(array $photos): void
     {
-        $this->photos = $photos;
+        $this->photos[] = $photos;
     }
 
     /**
