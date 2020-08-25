@@ -1,13 +1,15 @@
 <?php
 
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 interface FileUploaderInterface
 {
     /**
      * @param $file
      * @return mixed
      */
-    public function upload($file);
+    public function upload(UploadedFile $file);
 
     /**
      * @return mixed

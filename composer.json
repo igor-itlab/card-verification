@@ -17,7 +17,9 @@
     "ext-json": "*",
     "symfony/filesystem": "^5.2@dev",
     "symfony/validator": "^5.2@dev",
-    "symfony/http-foundation": "^5.2@dev"
+    "symfony/http-foundation": "^5.2@dev",
+    "symfony/orm-pack": "dev-master",
+    "ext-intl": "*"
   },
   "autoload": {
     "psr-4": { "Calculation\\": "" }
