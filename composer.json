@@ -15,9 +15,9 @@
   "require": {
     "php": ">=7.2.5",
     "ext-json": "*",
-    "symfony/validator": "^5.2@dev",
-    "symfony/http-foundation": "^5.2@dev",
-    "ext-intl": "*"
+    "ext-intl": "*",
+    "symfony/http-foundation": "^5.1",
+    "symfony/validator": "^5.1"
   },
   "extra": {
     "symfony": {
