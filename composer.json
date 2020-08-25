@@ -15,13 +15,9 @@
   "require": {
     "php": ">=7.2.5",
     "ext-json": "*",
-    "symfony/filesystem": "^5.2",
     "symfony/validator": "^5.2@dev",
     "symfony/http-foundation": "^5.2@dev",
     "ext-intl": "*"
-  },
-  "autoload": {
-    "psr-4": { "Calculation\\": "" }
   },
   "extra": {
     "symfony": {
