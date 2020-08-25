@@ -18,7 +18,7 @@
     "symfony/filesystem": "^5.2@dev",
     "symfony/validator": "^5.2@dev",
     "symfony/http-foundation": "^5.2@dev",
-    "symfony/orm-pack": "dev-master",
+    "symfony/orm-pack": "dev-master@dev",
     "ext-intl": "*"
   },
   "autoload": {
