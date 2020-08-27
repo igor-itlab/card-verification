@@ -14,12 +14,12 @@ class CardVerification
         $this->creditCard = $creditCard;
     }
 
-    public function verificateCard(CreditCardInterface $creditCard, $data, $currentUser, $directoryForImage )
+    public function verificateCard(CreditCardInterface $creditCard, $formData, $currentUser, $directoryForImage )
     {
         $creditCard->setClient($currentUser);
 
         $fileUploader = new FileUploader($directoryForImage);
-        $creditCard->setPhotos((array)$this->handleFiles($data['photos'], $fileUploader));
+        $creditCard->setPhotos((array)$this->handleFiles($formData['photos'], $fileUploader));
 
 //        $count = $entityManager->getRepository(__CLASS__)->count(['seen' => false]);
 //        try {
