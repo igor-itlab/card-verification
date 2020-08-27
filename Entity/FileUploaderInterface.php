@@ -1,6 +1,5 @@
 <?php
 
-
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 interface FileUploaderInterface
