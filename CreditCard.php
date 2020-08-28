@@ -1,8 +1,9 @@
 <?php
 
-namespace CardVerification\Entity;
+namespace CardVerification;
 
-use CardVerification\Entity;
+use CardVerification\Entity\ClientInterface;
+use CardVerification\Entity\CreditCardInterface;
 use DateTime;
 
 class CreditCard implements CreditCardInterface

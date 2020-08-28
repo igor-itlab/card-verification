@@ -4,6 +4,7 @@ namespace CardVerification\Service;
 
 use CardVerification\Entity\ClientInterface;
 use CardVerification\Entity\CreditCardInterface;
+use CardVerification\Entity\FileUploaderInterface;
 use CardVerification\Service\FileUploader;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,22 +27,6 @@ class CardVerification
         $fileUploader = new FileUploader($directoryForImage);
         $creditCard->setPhotos((array)$this->handleFiles($formData['photos'], $fileUploader));
 
-//        $count = $entityManager->getRepository(__CLASS__)->count(['seen' => false]);
-//        try {
-//            $update = new Update(
-//                'http://buycoin/card/write',
-//                json_encode(
-//                    [
-//                        'status' => Response::HTTP_OK,
-//                        'count'  => $count
-//                    ]
-//                )
-//            );
-//            $publisher($update);
-//        } catch (Exception $exception) {
-//            return $creditCard;
-//        }
-
         return new JsonResponse(null, Response::HTTP_OK);
 
     }
@@ -58,11 +43,6 @@ class CardVerification
 
                 $fileSize = filesize($fileUploader->getTargetDirectory() . '/' . $fileName[$key]['name']);
                 $filesSize += $fileSize;
-            }
-
-            if ($filesSize > 20000000) {
-                //return new JsonResponse(null, Response::HTTP_NO_CONTENT);
-                return new Exception;
             }
 
             return $fileName;
