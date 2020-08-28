@@ -1,5 +1,8 @@
 <?php
 
+namespace CardVerification\Entity;
+
+use DateTime;
 
 interface CreditCardInterface
 {

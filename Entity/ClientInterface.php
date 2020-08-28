@@ -1,5 +1,6 @@
 <?php
 
+namespace CardVerification\Entity;
 
 interface ClientInterface
 {

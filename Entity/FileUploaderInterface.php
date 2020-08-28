@@ -1,5 +1,7 @@
 <?php
 
+namespace CardVerification\Entity;
+
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 interface FileUploaderInterface

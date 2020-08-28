@@ -1,15 +1,14 @@
 <?php
 
+namespace CardVerification\Entity;
 
-use Symfony\Component\Filesystem\Filesystem;
 
 interface FileServiceInterface
 {
     /**
-     * @param $filesystem
      * @param string $directory
      */
-    public function createDirectory(Filesystem $filesystem, string $directory): void;
+    public function createDirectory(string $directory): void;
 
     /**
      * @return FileServiceInterface

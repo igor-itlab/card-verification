@@ -1,5 +1,10 @@
 <?php
 
+namespace CardVerification\Service;
+
+use CardVerification\Entity\ClientInterface;
+use CardVerification\Entity\CreditCardInterface;
+use CardVerification\Service\FileUploader;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
