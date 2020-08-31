@@ -1,5 +1,5 @@
 {
-  "name": "itlab-studio/cardVerification",
+  "name": "itlab-studio/card-verification",
   "type": "library",
   "description": "Library for credit card verification",
   "version": "1.0.1",
